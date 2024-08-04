@@ -1,8 +1,9 @@
 # MarkdownishCV
 
-- Uses [Beautiful Soup](https://pypi.org/project/beautifulsoup4/) to easily tailor your CV by adding/removing sections
-- Uses [weasyprint](https://weasyprint.org/) to create PDF output
-- Can insert page breaks into PDF output using `<div class="page-break"></div>`
+- Easily tailor your CV by adding/removing sections by wrapping them with HTML tags with uniquely named classes (using [Beautiful Soup](https://pypi.org/project/beautifulsoup4/))
+- Create PDF versions of your CV (using [pandoc](https://pandoc.org/) and [weasyprint](https://weasyprint.org/))
+- Insert page breaks into PDF output using `<div class="page-break"></div>`
+- CV also looks nice when used as a [webpage](https://www.avivyaish.com/cv/)
 - Sample files:
   - `cv.pdf`: PDF version of the sample
   - `code.py`: cleans up code and creates PDF output
@@ -134,6 +135,7 @@ ol {
   <a href="https://yourdomain.com">👤 yourdomain.com</a>
 </center>
 
+<!-- Wrap different sections in HTML elements with unique classes to later allow adding/removing sections using BeautifulSoup -->
 <p class="paragraph" style="text-align: justify;">
 
 ## Paragraph
