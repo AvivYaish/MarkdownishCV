@@ -1,6 +1,5 @@
 # MarkdownishCV
 
-A simple CV, mostly in Markdown, with some HTML and CSS.
 - Uses [Beuaitful Soup](https://pypi.org/project/beautifulsoup4/) to easily tailor your CV by adding/removing sections
 - Uses [weasyprint](https://weasyprint.org/) to create PDF output
 - Can insert page breaks into PDF output using `<div class="page-break"></div>`
