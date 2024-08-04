@@ -4,7 +4,13 @@
 
 A simple CV, mostly in Markdown, with some HTML and CSS.
 - Uses [Beuaitful Soup](https://pypi.org/project/beautifulsoup4/) to easily tailor your CV by adding/removing sections
+- Uses [weasyprint](https://weasyprint.org/) to create PDF output
 - Can insert page breaks into PDF output using `<div class="page-break"></div>`
+- Sample files:
+  - `style.css`: provides styling for PDF outputs when using weasyprint, defines the page break tag
+  - `main.md`: sample input file
+  - `clean.md`: cleaned sample
+  - `cv.md`: PDF version of the sample
 
 ```python
 import re
@@ -38,6 +44,6 @@ for attr in ['<html>', '</html>', '<head>', '</head>', '<body>', '</body>', '<pr
 clean_file = Path('./clean.md')
 clean_file.write_text(output, encoding=None, errors=None)
 
-# Convert the .md to .pdf using [weasyprint](https://weasyprint.org/)
+# Convert the .md to .pdf
 print(subprocess.Popen(f'pandoc {clean_file} --css style.css --pdf-engine=weasyprint --metadata title="" --from markdown+startnum -o cv.pdf', cwd=Path('.').absolute(), shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT).stdout.read())
 ```
